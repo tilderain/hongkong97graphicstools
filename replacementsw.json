@@ -1,0 +1,75 @@
+{
+  "graphics": [
+    {
+      "image_path": "w1.png",
+      "snes_address": "0x84D516",
+      "target_size": 28660,
+      "palette_address": "0x84D4F3"
+    },
+    {
+      "image_path": "splash1.png",
+      "snes_address": "0x899BA1",
+      "target_size": 28660
+    },
+    {
+      "image_path": "splash2.png",
+      "snes_address": "0x89D1A5",
+      "target_size": 28660
+    },
+    {
+      "image_path": "splash3.png",
+      "snes_address": "0x8BEB49",
+      "target_size": 28660
+    },
+    {
+      "image_path": "splash4.png",
+      "snes_address": "0x8A8C6D",
+      "target_size": 28660
+    },
+    {
+      "image_path": "splash5.png",
+      "snes_address": "0x8BBC7E",
+      "target_size": 28660
+    },
+    {
+      "image_path": "w2.png",
+      "snes_address": "0x85AD0D",
+      "target_size": 28660
+    },
+    {
+      "image_path": "w3.png",
+      "snes_address": "0x8684B5",
+      "target_size": 28660
+    },
+    {
+      "image_path": "w4.png",
+      "snes_address": "0x86CB82",
+      "target_size": 28660
+    },
+    {
+      "image_path": "sdead.png",
+      "snes_address": "0x87AD9A",
+      "target_size": 28660
+    },
+    {
+      "image_path": "wt.png",
+      "snes_address": "0x84A829",
+      "target_size": 28660
+    },
+    {
+      "image_path": "scurl.png",
+      "snes_address": "0x85ECED",
+      "target_size": 28660
+    },
+    {
+      "image_path": "spodium.png",
+      "snes_address": "0x859A51",
+      "target_size": 28660
+    },
+    {
+      "image_path": "ssprite.png",
+      "snes_address": "0x848600",
+      "target_size": 28660
+    }
+  ]
+}
