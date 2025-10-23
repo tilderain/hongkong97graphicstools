@@ -1,0 +1,89 @@
+
+> 0x8098A7
+2,9,"        BETAS WANTED!"
+2,11,"We will buy your original"
+2,12,"C-S beta remakes(1/3 of"
+2,13,"gross profits are urs)"
+2,14,"We welcome betas of any kind"
+2,15,"so please send us ur lzh file."
+2,16,"We will contact you after"
+2,17,"careful!considerations."
+> 0x809A6F
+2,9,"Would you like to see your"
+2,10,"games in our website?"
+2,12,"all the adsense money will"
+2,13,"go to us.You will not"
+2,14,"see a SINGLE dime."
+2,15,"CUCKED(Please dm us"
+2,16,"for details"
+
+> 0x809805
+4,9,"PIXEL-ONLINE INC."
+4,11,"cavestorybeta.org"
+4,12,"discord.gg/sy3vAf79B"
+4,13,"CANADA"
+
+
+> 0x809431
+2,21,"The year 1997 has arrived."
+2,22,"A herd of fuckin' ugly blues"
+2,23,"are rushing from the"
+2,24,"mainland."
+
+> 0x8094F1
+2,21,"Reset rate skyrockeded!"
+2,22,"Doukutsu is ruined!"
+2,23,"Therefore, The Ikachan"
+2,24,"government called Ame's"
+2,25,"relative "Carly""
+
+> 0x8095EB
+2,21,"for the massacre of the soas."
+2,22,"Carly is a killer machine."
+2,23,"Wipe out all 2.50 million of"
+2,24,"the soap bars!"
+
+
+> 0x8096CD
+2,21,"However, in mainland Pixel"
+2,22,"Online, there was a secret project"
+2,23,"in progress! A project to"
+2,24,"transform the deceased "
+2,25,"Oscor into an ultimate"
+2,26,"weapon!"
+
+> 0x808B05
+# Encoding: JP
+5,5,"　　　[UN:01EE][UN:0189]・[UN:01B6][UN:01B1]"
+6,7,"　　[UN:0136][UN:012E][UN:01A9][UN:018D][UN:014D][UN:015D]"
+6,9,"（Ｓｏａ Ｓｏｆｔ）"
+5,11,"　[UN:01B4][UN:01E8][UN:016B][UN:01F5]　[UN:01F6][UN:01F7][UN:01F8][UN:0138]"
+5,17,"　　　　[UN:01AA][UN:01C6][UN:01FC]"
+6,19,"　　　　[UN:0195][UN:01BD]"
+5,21,"　　Ｅｎｇｌｉｓｈ"
+5,23,"　　　　ＣＭ"
+
+> 0x8092EF
+# Encoding: JP
+7,3,"　　　[UN:017B][UN:0159][UN:0142]"
+8,6,"　　　[UN:0148]ヶ"
+7,8,"　　　[UN:019B][UN:018C][UN:0154]"
+8,11,"　　[UN:01D0][UN:0135][UN:019E][UN:01B8]"
+7,13,"ＣａｒｌｙＢａｒｃｅ"
+8,16,"　　[UN:011D][UN:013E][UN:017B][UN:0159]"
+8,18,"　　ジヨボヲ"
+8,21,"　　[UN:01A0][UN:01AE][UN:0127][UN:0125]"
+7,23,"　　[UN:016E][UN:0186][UN:015E]"
+
+> 0x809399
+# Encoding: JP
+7,3,"　　　[UN:017B][UN:0159][UN:0142]"
+8,6,"　　引[UN:01BD][UN:0161][UN:01C7]"
+7,8,"　　Ｇｅｎｏｍ"
+8,11,"　　[UN:0195][UN:01BD][UN:0161][UN:01C7]"
+7,13,"　ケ一ラ一ダユゥ"
+8,16,"　　　[UN:013D][UN:01DC]"
+7,18,"　　　ＳＧＩ"
+8,20,"　オドタ[UN:018F][UN:015C][UN:012D]"
+
+
