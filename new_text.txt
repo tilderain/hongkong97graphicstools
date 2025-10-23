@@ -3,7 +3,7 @@
 2,9,"        BETAS WANTED!"
 2,11,"We will buy your original"
 2,12,"C-S beta remakes(1/3 of"
-2,13,"gross profits are urs)"
+2,13,"anemoias are urs)"
 2,14,"We welcome betas of any kind"
 2,15,"so please send us ur lzh file."
 2,16,"We will contact you after"
@@ -20,7 +20,7 @@
 > 0x809805
 4,9,"PIXEL-ONLINE INC."
 4,11,"cavestorybeta.org"
-4,12,"discord.gg/sy3vAf79B"
+4,12,"discord.gg/sy3vAf739B"
 4,13,"CANADA"
 
 
