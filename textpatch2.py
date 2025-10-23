@@ -8,7 +8,7 @@ This script can both extract (dump) and insert (patch) text in the game
 
 1. DUMPING TEXT:
    To extract all the game's text into a file for editing, run:
-   python textpatch.py dump > new_text.txt
+   python textpatch2.py dump > new_text.txt
 
 2. EDITING TEXT:
    Open 'new_text.txt' in a text editor. You can change the text within the
@@ -17,7 +17,7 @@ This script can both extract (dump) and insert (patch) text in the game
 
 3. PATCHING TEXT:
    After you have finished editing, save your changes and run the patcher:
-   python textpatch.py patch new_text.txt
+   python textpatch2.py patch new_text.txt
 
    This will create a new ROM file named 'hongkong97_patched.smc'.
 
@@ -36,9 +36,6 @@ SMC_HEADER_SIZE = 512
 # This game uses a LoROM memory map.
 ROM_TYPE = 'LOROM'  # Can be 'LOROM' or 'HIROM'
 
-# Japanese character codes need an offset applied
-JP_CHAR_OFFSET = 24  # Offset to subtract from Japanese character codes
-
 # Enable this to see hex data before and after patching for verification.
 DEBUG = True
 
@@ -56,23 +53,20 @@ ENGLISH_TEXT_BLOCKS = [
 
 # Japanese text blocks
 JAPANESE_TEXT_BLOCKS = [
-    0x808C1D,  
-    0x80909B, 
-    0x808D7B, 
-    0x808BB9, 
-    0x809045,  
-    0x808B05,  #main menu
-    0x808B0C,  
-    0x808B45,  
-    0x808B72,  
-    0x808B97,  
+    0x808B05,  #mainmenu
+    0x808BB9,  #address
+    0x809045,  #address2
+    0x808C1D,  #profits
+    0x808D7B,  #sellourgames
+    0x808F89,  #killermachine1.2
+    0x808FE7,  #secretweapon
+    0x80909B,  #CNsellgames
+    0x80925B,  
     0x8092EF,  #Credits1
     0x809399,  #Credits2
-    0x808591,  
-    0x808F89,  
-    0x808FE7,  
+    0x80918F,  
+    0x809233,  
 ]
-
 TEXT_BLOCK_ADDRESSES = ENGLISH_TEXT_BLOCKS + JAPANESE_TEXT_BLOCKS
 
 # --- Font Mapping ---
@@ -91,7 +85,7 @@ FONT_MAP_STRING_JP = (
 "ｅｆｇｈｉｊｋｌ"
 "ｍｎｏｐｑｒｓｔ"
 "ｕｖｗｘｙｚぁ＃"
-"あいぃうぅえぇぉ"
+"あぃいぅうぇえぉ"
 "おかがきぎくぐけ"
 "げこごさざしじす"
 "ずせぜそぞただち"
@@ -113,7 +107,45 @@ FONT_MAP_STRING_JP = (
 "ョヨラリルレロヮ"
 "ワヰヱヲンヴヵヶ"
 "案以依委易一因引"
+"英益汚押億音下何"
+"可家果過我画改絵"
+"外害割閲割館喜器"
+"寄希気記貴戯吉求"
+"究巨挙京供協響九"
+"区過群経計軽権研"
+"原個呼後交公構港"
+"行香合国黒此査在"
+"罪作殺残使司子死"
+"事字持磁而自七取"
+"酬宿純所書召小詳"
+"上情侵審新親進入"
+"随趨是制政生西請"
+"戚籍折説絶先川曽"
+"送造他多太体代大"
+"託但断地着中注者"
+"嘆庁懲陳提訂の店"
+"電吐鄧都度東等到"
+"内軟日如任年脳巴"
+"馬売薄発版犯販秘"
+"紐不府武幅文兵平"
+"便舗報方亡望本幕"
+"亦抹密民無明面問"
+"遊容用來頼絡利李"
+"陸留龍了力連論和"
+"來們售國將專很扣"
+"權痰發盡詢賣製造"
+"販売版權所有翻印"
+"必究日本語ヤュユ"
 )
+
+# --- Dual-Offset System for Japanese ---
+# The game uses a different offset for Kana vs Kanji, creating a split encoding system.
+JP_KANA_OFFSET = 24
+JP_KANJI_OFFSET = 23
+# The index of the first Kanji in the font map. This determines the boundary.
+FIRST_KANJI_INDEX = FONT_MAP_STRING_JP.find('案')
+# The raw character code in the ROM at which we switch from Kana to Kanji logic.
+JP_KANJI_START_CODE = FIRST_KANJI_INDEX + JP_KANJI_OFFSET  # 171 + 23 = 194
 
 # Build English character map
 CHAR_MAP_EN = {0x00: ' '}
@@ -130,9 +162,9 @@ for i, char in enumerate(FONT_MAP_STRING_JP):
 # Build encode maps for patching
 ENCODE_MAP_EN = {char: code for code, char in CHAR_MAP_EN.items()}
 ENCODE_MAP_JP = {char: code for code, char in CHAR_MAP_JP.items()}
-# --- End Configuration ---
 # Allow standard space ' ' to be used in Japanese blocks; map it to the full-width space '　'.
 ENCODE_MAP_JP[' '] = ENCODE_MAP_JP['　']
+# --- End Configuration ---
 
 def is_english_block(snes_addr: int) -> bool:
     """Determine if a block uses English or Japanese encoding."""
@@ -209,8 +241,15 @@ def dump_all_text(rom_data: bytes, header_offset: int):
                 offset += 2
                 if char_code == 0xFFFF: break
                 
-                # Apply offset for Japanese text
-                lookup_code = char_code - JP_CHAR_OFFSET if not is_english else char_code
+                if not is_english:
+                    # This game uses a split offset for Kana and Kanji
+                    if char_code >= JP_KANJI_START_CODE:
+                        lookup_code = char_code - JP_KANJI_OFFSET
+                    else:
+                        lookup_code = char_code - JP_KANA_OFFSET
+                else:
+                    lookup_code = char_code
+
                 decoded_string += char_map.get(lookup_code, f'[UN:{char_code:04X}]')
             print(f'{x_coord},{y_coord},"{decoded_string}"')
 
@@ -259,12 +298,18 @@ def encode_text_block(sub_blocks: list, snes_addr: int) -> bytearray:
             if char not in encode_map:
                 raise ValueError(f"Character '{char}' not found in font map!")
             
-            # Apply offset for Japanese text when encoding
-            char_code = encode_map[char]
-            if not is_english:
-                char_code += JP_CHAR_OFFSET
+            char_index = encode_map[char]
+            final_code = char_index # Default for English blocks
             
-            block_data.extend(struct.pack('<H', char_code))
+            # Apply offset for Japanese text when encoding
+            if not is_english:
+                # Japanese text uses a split offset based on character index
+                if char_index >= FIRST_KANJI_INDEX:
+                    final_code = char_index + JP_KANJI_OFFSET
+                else:
+                    final_code = char_index + JP_KANA_OFFSET
+            
+            block_data.extend(struct.pack('<H', final_code))
             i += 1
         block_data.extend(b'\xFF\xFF')
     block_data.extend(b'\xFF\xFF')
@@ -350,7 +395,7 @@ def main():
     elif mode == 'patch':
         if len(sys.argv) < 3:
             print("Error: Please specify the input text file for patching.", file=sys.stderr)
-            print("Usage: python textpatch.py patch <filename.txt>", file=sys.stderr)
+            print("Usage: python textpatch2.py patch <filename.txt>", file=sys.stderr)
             sys.exit(1)
         patch_rom(rom_data, header_offset, sys.argv[2])
 
