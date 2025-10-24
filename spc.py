@@ -4,11 +4,11 @@ import os
 
 # --- Configuration ---
 # Your original, unmodified game ROM file (e.g., 'hongkong97.smc').
-ROM_ORIGINAL_FILE = 'hongkong97_patchedreal.smc'
+ROM_ORIGINAL_FILE = 'cavestory97-ogsong.smc'
 # The new BRR sample you want to insert.
 BRR_REPLACEMENT_FILE = 'carly6.brr'
 # The name of the new, patched ROM file that will be created.
-ROM_OUTPUT_FILE = 'cavestory97-song.smc'
+ROM_OUTPUT_FILE = 'cavestory97.smc'
 # --- Technical Details ---
 INJECTION_OFFSET = 0x78e9e
 MAX_BRR_SIZE = 24750

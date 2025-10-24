@@ -1,0 +1,23 @@
+palette 84D483 (title screen) line 0 is for graphic 85ECED (chin graphic and title)
+palette 84D483 (title screen) line 1 is for graphic 84A829 (ping title graphic)
+palette 84D4F3 (cutscene 1) line 0 is for graphic 84D516
+
+palette 8599ED (cutscene 2) line 0 is for graphic 859A51 (top sprite)
+palette 8599ED (cutscene 2) line 1 is for graphic 859A51 (bottom sprite)
+palette 8599ED (cutscene 2) line 2 is for graphic 85AD0D
+
+palette 85ECA9 (cutscene 3) line 0 is for graphic 85ECED (chin graphic)
+palette 85ECA9 (cutscene 3) line 1 is for graphic 85ECED (bg graphic)
+
+palette 86CB5E (cutscene 4) line 0 is for graphic 86CB82 
+
+palette 84A725 (sprites) line 0 is for enemy 1 (glasses, bottomright)
+palette 84A725 (sprites) line 1 is for enemy 2 (soldier topleft, and running chin)
+palette 84A725 (sprites) line 2 is for boss (ping)
+palette 84A725 (sprites) line 3 is for enemy 3 (red shirt, topright)
+palette 84A725 (sprites) line 4 is for dead guy graphic
+palette 84A725 (sprites) line 5 is for button, bullets, score, taxi, syringe
+palette 84A725 (sprites) line 6 is for chin (white shirt facing up and down)
+palette 84A725 (sprites) line 7 is for explosion, player bullet
+
+palette 87AD76 (game over) is for graphic 87AD9A

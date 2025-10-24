@@ -1,0 +1,42 @@
+{
+  "0x84A829": {
+    "palette_address": "0x84D483",
+    "palette_lines": [2],
+    "description": "ping title graphic"
+  },
+  "0x84D516": {
+    "palette_address": "0x84D4F3",
+    "palette_lines": [0],
+    "description": "cutscene 1"
+  },
+  "0x859A51": {
+    "palette_address": "0x8599ED",
+    "palette_lines": [0, 1],
+    "description": "cutscene 2 (top/bottom sprite)"
+  },
+  "0x85AD0D": {
+    "palette_address": "0x8599ED",
+    "palette_lines": [2],
+    "description": "cutscene 2"
+  },
+  "0x85ECED": {
+    "palette_address": "0x85ECA9",
+    "palette_lines": [0, 1],
+    "description": "chin graphic & bg (Note: also uses 0x84D483 in another scene)"
+  },
+  "0x86CB82": {
+    "palette_address": "0x86CB5E",
+    "palette_lines": [0],
+    "description": "cutscene 4"
+  },
+  "0x87AD9A": {
+    "palette_address": "0x87AD76",
+    "palette_lines": [0],
+    "description": "game over"
+  },
+  "0x848600": {
+    "palette_address": "0x84A725",
+    "palette_lines": [0, 1, 2, 3, 4, 5, 6, 7],
+    "description": "Main sprite sheet (multi-palette)"
+  }
+}
