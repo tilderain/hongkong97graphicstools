@@ -18,7 +18,7 @@
 2,16,"for details"
 
 > 0x809805
-4,9,"PIXEL-ONLINE INC."
+0,9,"PIXEL-ONLINE INC."
 4,11,"cavestorybeta.org"
 4,12,"discord.gg/sy3vAf739B"
 4,13,"CANADA"
